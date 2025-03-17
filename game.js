@@ -34,24 +34,24 @@ class DiceGame {
     }
 
     startGame(diceInput) {
-        // Validate the input dice array
+       
         const validDiceInput = this.validateDiceInput(diceInput);
 
         if (!validDiceInput) {
             console.log("Invalid input. Please provide at least 3 valid dice values.");
-            this.rl.close();  // End the game if invalid input
+            this.rl.close();
             return; 
         }
 
         try {
             this.diceSet = [
-                new Dice([2, 2, 4, 4, 9, 9]), // Valid dice
-                new Dice([1, 1, 6, 6, 8, 8]), // Valid dice
-                new Dice([3, 3, 5, 5, 7, 7])  // Valid dice
+                new Dice([2, 2, 4, 4, 9, 9]), 
+                new Dice([1, 1, 6, 6, 8, 8]), 
+                new Dice([3, 3, 5, 5, 7, 7])  
             ];
         } catch (error) {
             console.log("Error in dice configuration:", error.message);
-            return; // Exit if dice configuration is invalid
+            return; 
         }
 
         console.log("Let's determine who makes the first move.");
@@ -63,7 +63,6 @@ class DiceGame {
     }
 
     validateDiceInput(input) {
-        // Check if the input is a valid array of at least 3 integers
         const diceValues = input.split(',').map(val => parseInt(val.trim()));
         return diceValues.length >= 3 && diceValues.every(val => !isNaN(val) && Number.isInteger(val));
     }
@@ -211,7 +210,7 @@ class DiceGame {
         ];
 
         let table = '-----------------------------------------\n';
-        table += '| User Dice          | Computer Dice   | Win Probability (%) |\n';
+        table += '| User Dice        | Computer Dice   | Win Probability (%) |\n';
         table += '-----------------------------------------\n';
 
         dicePairs.forEach(pair => {
