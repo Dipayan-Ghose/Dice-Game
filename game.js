@@ -240,9 +240,8 @@ class DiceGame {
     }
 }
 
-// Accept dice input as command line argument (e.g., "1,2,3,4,5")
 const diceInput = process.argv[2];
 
 const game = new DiceGame();
-game.startGame(diceInput);  // Pass the dice input
+game.startGame(diceInput);  
 
