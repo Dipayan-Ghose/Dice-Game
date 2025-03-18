@@ -43,17 +43,6 @@ class DiceGame {
             return; 
         }
 
-        try {
-            this.diceSet = [
-                new Dice([2, 2, 4, 4, 9, 9]), 
-                new Dice([1, 1, 6, 6, 8, 8]), 
-                new Dice([3, 3, 5, 5, 7, 7])  
-            ];
-        } catch (error) {
-            console.log("Error in dice configuration:", error.message);
-            return; 
-        }
-
         console.log("Let's determine who makes the first move.");
         this.key = FairRandom.generateRandomKey();
         this.compChoice = FairRandom.generateRandomNumber(2);
